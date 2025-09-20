@@ -19,7 +19,7 @@ function Gallery() {
     <div className="bg-[#F8F8FF] py-5 px-5 md:px-10">
       <h1 id="gallery" className="text-3xl font-bold mb-6 text-center">Gallery</h1>
 
-      <div className="grid grid-cols-3 gap-4 p-4">
+      <div className=" flex flex-col justify-center md:grid grid-cols-3 gap-4 p-4">
         {images.slice(0, 6).map((img, index) => (
           <div key={index} className="w-full h-64 overflow-hidden">
             <img
