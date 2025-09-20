@@ -17,6 +17,11 @@
   "dependencies": {
     "@sanity/vision": "^4.9.0",
     "sanity": "^4.9.0",
+    "@sanity/base": "^4.9.0",
+    "@sanity/desk-tool": "^4.9.0",
+    "@sanity/default-layout": "^4.9.0",
+    "@sanity/default-login": "^4.9.0",
+    "@sanity/components": "^4.9.0",
     "styled-components": "^6.1.18"
   },
   "devDependencies": {
