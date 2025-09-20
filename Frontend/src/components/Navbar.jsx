@@ -9,24 +9,24 @@ const Navbar = () =>{
 
 
     return (
-    <div className="w-full bg-stone-200 sticky top-0 z-50">
-        <header className="  flex  justify-between items-center  text-black py-1 px-2 md:px-28 bg-white drop-shadow-md">
+    <div className="w-ful sticky top-0 z-50 bg-white/70 backdrop-blur supports-[backdrop-filter]:bg-white/60 ">
+        <header className="  flex  justify-between items-center h-16 text-black py-1 px-2 md:px-28 bg-white/70 drop-shadow-md">
         <Link to="hero" smooth={true} duration={500} spy={true} offset={-80}>
             <img src='/' alt="Mandir Logo" className='w-[80px] hover:scale-56 transition-all cursor-pointer'/>
         </Link>
-        <ul className="hidden xl:flex items-center gap-6 font-serif text-lg">
+        <ul className="hidden xl:flex items-center gap-6 text-md font-medium">
         <li><Link to="hero" smooth={true} duration={500} spy={true} offset={-80} activeClass="text-blue-500" className="cursor-pointer hover:text-sky-600">Home</Link></li>
+        {/* <li><Link to="news" smooth={true} duration={500} spy={true} offset={-80} activeClass="text-blue-500" className="cursor-pointer hover:text-sky-600">News</Link></li> */}
         <li><Link to="aboutus" smooth={true} duration={500} spy={true} offset={-80} activeClass="text-blue-500" className="cursor-pointer hover:text-sky-600">About Us</Link></li>
         <li><Link to="activities" smooth={true} duration={500} spy={true} offset={-80} activeClass="text-blue-500" className="cursor-pointer hover:text-sky-600">Activities</Link></li>
-        <li><Link to="blogs" smooth={true} duration={500} spy={true} offset={-80} activeClass="text-blue-500" className="cursor-pointer hover:text-sky-600">Blogs</Link></li>
         <li><Link to="gallery" smooth={true} duration={500} spy={true}offset={-80} activeClass="text-blue-500" className="cursor-pointer hover:text-sky-600">Gallery</Link></li>
-        <li><Link to="contact" smooth={true} duration={500} spy={true} offset={-80} activeClass="text-blue-500" className="cursor-pointer hover:text-sky-600">Contact Us</Link></li>
+        <li><Link to="location" smooth={true} duration={500} spy={true} offset={-80} activeClass="text-blue-500" className="cursor-pointer hover:text-sky-600">Location</Link></li>
         </ul>
-    <div className='relative hidden xl:flex items-center justify-center '>
+    {/* <div className='relative hidden xl:flex items-center justify-center '>
             <a href="/" target='_blank' >
             <button className='rounded-lg p-2 w-[120px] font-semibold bg-orange-500 font-sans text-white hover:bg-orange-400 shadow-md'>Donation </button>
             </a>
-    </div>
+    </div> */}
 
         <i className={`xl:hidden block text-5xl cursor-pointer ${isMenuOpen ? 'bx bx-x' : 'bx bx-menu'}`} onClick={()=> setIsMenuOpen(!isMenuOpen)}></i>
 

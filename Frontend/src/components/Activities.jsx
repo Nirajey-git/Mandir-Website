@@ -1,46 +1,48 @@
-import React from 'react'
-import photo1 from '../assets/photo1.jpeg'
+import React, { useEffect, useState } from 'react'
+import client, { urlFor } from '../sanityClient'
+import { Swiper, SwiperSlide } from 'swiper/react'
+import 'swiper/css'
+import 'swiper/css/navigation'
+import { Navigation } from 'swiper/modules'
 
 export const Activities = () => {
-  return (
-    <div id= "activities"className=' bg-[#F8F8FF] py-5 px-5 md:px-10'>
-        <h1 className='text-3xl font-bold mb-6 text-center '>Activities</h1>
-        <div class="mt-10 grid grid-flow-col grid-rows-2 grid-cols-3 gap-5 ">
-        <div>
-        <img src={photo1} alt="" loading="lazy" className='rounded-lg'/>
-        </div>
-        <div class="col-start-3">
-            <img src={photo1} alt="mg" loading="lazy" className='rounded-lg'/>
-        </div>
-        <div>
-            <img src={photo1} alt="mg" loading="lazy" className='rounded-lg'/>
-        </div>
-        <div>
-            <img src={photo1} alt="mg" loading="lazy" className='rounded-lg'/>
-        </div>
-        <div>
-            <img src={photo1} alt="mg" loading="lazy" className='rounded-lg'/>
-        </div>
-        <div>
-            <img src={photo1} alt="mg" loading="lazy" className='rounded-lg'/>
-        </div>
-         <div>
-            <img src={photo1} alt="mg" loading="lazy" className='rounded-lg'/>
-        </div>
-         <div>
-            <img src={photo1} alt="mg" loading="lazy" className='rounded-lg'/>
-        </div>
-         <div>
-            <img src={photo1} alt="mg" loading="lazy" className='rounded-lg'/>
-        </div>
-        <div class="row-start-1 col-start-2 col-span-2">
-            <img src={photo1} alt="mgg" loading="lazy" className='rounded-lg '/>
-        </div>
-        </div>
-        <div className='flex justify-center items-center mt-3'>
-        <button className='bg-orange-500 text-center p-2 rounded-lg text-white w-[120px] text-lg hover:bg-orange-600'> Load More</button>
-        </div>
+  const [images, setImages] = useState([])
 
+  useEffect(() => {
+    client
+      .fetch(`*[_type == "activities"][0]{ images }`)
+      .then((data) => setImages(data?.images || []))
+      .catch(console.error)
+  }, [])
+
+  return (
+    <div id="activities" className="bg-[#F8F8FF] py-5 px-5 md:px-10">
+      <h1 className="text-3xl font-bold mb-6 text-center">Activities</h1>
+
+      {images.length > 0 ? (
+        <Swiper
+          slidesPerView={3}
+          spaceBetween={20}
+          navigation
+          modules={[Navigation]}
+          className="mySwiper"
+          style={{'--swiper-navigation-color': '#ffffff', 
+  }}
+        >
+          {images.map((img, i) => (
+            <SwiperSlide key={i}>
+              <img
+                src={urlFor(img).width(400).height(300).url()}
+                alt={`activity-${i}`}
+                className="rounded-lg object-cover w-full h-[250px]"
+                loading="lazy"
+              />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      ) : (
+        <p className="text-center text-gray-500">No activities uploaded yet.</p>
+      )}
     </div>
   )
 }

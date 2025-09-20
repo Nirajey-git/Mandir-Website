@@ -2,15 +2,15 @@ import React from "react";
 
 export const MapSection = () => {
   return (
-    <div className="w-full py-10 bg-[#F8F8FF] flex flex-col items-center">
+    <div id="location" className="w-full py-10 bg-[#F8F8FF] flex flex-col items-center">
       <h2 className="text-3xl font-bold mb-6 text-center">Our Location</h2>
-      <p className="text-center mb-6 max-w-xl">
+      <p className="text-center mb-6 max-w-xl mx-2">
         Visit Shri Krishna Pranami Mandir, Salakpur. Find us on Google Maps below for easy directions.
       </p>
-      <div className="w-full md:w-3/4 lg:w-2/3 h-[400px] rounded-lg overflow-hidden shadow-lg ">
-        <iframe
+      <div className="w-[90%] rounded-lg md:w-3/4 lg:w-2/3 h-[400px] overflow-hidden shadow-lg  ">
+        <iframe 
           title="Salakpur Krishna Pranami Mandir Map"
-          src="https://www.google.com/maps/dir/Salakpur+Shree+Krishna+Pranami+Mandir/Biratchowk,+Koshi+Haraicha+56600/@26.6728192,87.3789537,16.36z/data=!4m14!4m13!1m5!1m1!1s0x39ef6f4c540d43b3:0x3dbfd366d931f04d!2m2!1d87.3765482!2d26.6706442!1m5!1m1!1s0x39ef65f840c1eab1:0x39b3f89f4bf15bae!2m2!1d87.3761105!2d26.6724847!3e0?hl=en&entry=ttu&g_ep=EgoyMDI1MDkwMy4wIKXMDSoASAFQAw%3D%3D"
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7130.615193500859!2d87.3678101118706!3d26.670643158701274!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39ef6f4c540d43b3%3A0x3dbfd366d931f04d!2sSalakpur%20Shree%20Krishna%20Pranami%20Mandir!5e0!3m2!1sen!2sau!4v1758340167960!5m2!1sen!2sau" 
           width="100%"
           height="100%"
           style={{ border: 0 }}

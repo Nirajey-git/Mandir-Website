@@ -1,2 +1,5 @@
+import aboutUs from './aboutUs';
+import activities from './activities';
 import gallery from './gallery'
-export const schemaTypes = [gallery];
+import news from './news'
+export const schemaTypes = [gallery, news, activities, aboutUs];
