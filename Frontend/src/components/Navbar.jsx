@@ -22,11 +22,6 @@ const Navbar = () =>{
         <li><Link to="gallery" smooth={true} duration={500} spy={true}offset={-80} activeClass="text-blue-500" className="cursor-pointer hover:text-sky-600">Gallery</Link></li>
         <li><Link to="location" smooth={true} duration={500} spy={true} offset={-80} activeClass="text-blue-500" className="cursor-pointer hover:text-sky-600">Location</Link></li>
         </ul>
-    {/* <div className='relative hidden xl:flex items-center justify-center '>
-            <a href="/" target='_blank' >
-            <button className='rounded-lg p-2 w-[120px] font-semibold bg-orange-500 font-sans text-white hover:bg-orange-400 shadow-md'>Donation </button>
-            </a>
-    </div> */}
 
         <i className={`xl:hidden block text-5xl cursor-pointer ${isMenuOpen ? 'bx bx-x' : 'bx bx-menu'}`} onClick={()=> setIsMenuOpen(!isMenuOpen)}></i>
 
@@ -36,13 +31,11 @@ const Navbar = () =>{
             <li className='list-none w-full text-center p-4 hover:bg-text-400 transition-all cursor-pointer'><Link to="hero" smooth duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>Home</Link></li>
             <li className='list-none w-full text-center p-4 hover:bg-text-400 transition-all cursor-pointer'><Link to="aboutus" smooth duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
             <li className='list-none w-full text-center p-4 hover:bg-text-400 transition-all cursor-pointer'><Link to="activities" smooth duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>Activities</Link></li>
-            <li className='list-none w-full text-center p-4 hover:bg-text-400 transition-all cursor-pointer'><Link to="blogs" smooth duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>Blogs</Link></li>
             <li className='list-none w-full text-center p-4 hover:bg-text-400 transition-all cursor-pointer'><Link to="gallery" smooth duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>Gallery</Link></li>
             <li className='list-none w-full text-center p-4 hover:bg-text-400 transition-all cursor-pointer'><Link to="contact" smooth duration={500} offset={-80} onClick={() => setIsMenuOpen(false)}>Contact Us</Link></li>
 
 
 
-            <button className='rounded-full w-[90%] p-3 mb-3 font-semibold bg-orange-500 text-white font-sans hover:bg-orange-600 shadow-md'><a href="/" target='_blank' >Donation</a></button>
 
         </div>
         </header>
